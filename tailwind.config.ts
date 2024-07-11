@@ -62,7 +62,8 @@ const config = {
           1 : '#E5F5FD'
         },
         yellow : {
-          1 : '#E5AE1F'
+          1 : '#E5AE1F',
+          2 : '#FFF110'
         },
         green : {
           1 : '#18CE2A'

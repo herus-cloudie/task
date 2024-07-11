@@ -6,7 +6,10 @@
     font-family: 'normalVazir';
     src: url('/font/Vazirmatn-Medium.ttf');
   }
-
+  @font-face {
+    font-family: 'lightVazir';
+    src: url('/font/Vazirmatn-Light.ttf');
+  }
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -74,4 +77,7 @@
     }
   }
 
+  .font-light-vazir{
+    font-family: 'lightVazir' !important;
+  }
 
