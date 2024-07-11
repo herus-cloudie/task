@@ -1,6 +1,11 @@
-@tailwind base;
+  @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  @font-face {
+    font-family: 'normalVazir';
+    src: url('/font/Vazirmatn-Medium.ttf');
+  }
 
   @layer base {
     :root {
@@ -65,5 +70,8 @@
     }
     body {
       @apply bg-background text-foreground;
+      font-family: 'normalVazir' !important;
     }
   }
+
+
