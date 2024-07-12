@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "کریپتر",
@@ -17,7 +17,12 @@ export default function RootLayout({
       <head>
         <link className="rounded-full" rel="icon" href="/img/logo.svg" sizes="50" />
       </head>
-      <body className={`bg-white`}>{children}</body>
+      <body className={`bg-white`}>
+        <main>
+          {children}
+        </main>
+        <Toaster />
+        </body>
     </html>
   );
 }
