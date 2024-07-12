@@ -1,9 +1,9 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import AuthOptions from "./authOptions";
 import { getServerSession } from "next-auth";
 import ConnectDataBase from "./connectDataBase";
 
 export default async function Session(){
     await ConnectDataBase()
-    let session = await getServerSession(authOptions)
+    let session = await getServerSession(AuthOptions)
     return session;
 } 
