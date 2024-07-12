@@ -38,7 +38,7 @@ const Header = ({session} : {session ?: any}) => {
             </div>
         </div>
         <div className="hidden xl:flex justify-between gap-3 ">
-            {pathName == '/' && <button onClick={() => session ? router.push('profile') : router.push('sign-in')} className="bg-blue-1 flex text-white p-3 items-center gap-5 rounded-xl"> {!session ? ' ورود و ثبت نام' : 'پروفایل'}
+            {pathName == '/' && <button onClick={() => router.push('profile')} className="bg-blue-1 flex text-white p-3 items-center gap-5 rounded-xl">پروفایل
                 <Image width={20} height={20} src={'/icon/user.svg'} alt="user icon"/>
             </button>}
             <button className="bg-red-1 flex text-white p-3 items-center gap-5 rounded-xl">پشتیبانی

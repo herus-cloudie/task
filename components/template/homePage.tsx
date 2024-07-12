@@ -2,6 +2,7 @@ import Session from "@/utils/session";
 import Hero from "../module/hero"
 import PriceList from "../module/priceList"
 import { redirect } from "next/navigation";
+import WhyUs from "../module/whyus";
 
 const HomePage = async () => {
   let session = await Session();
@@ -10,6 +11,7 @@ const HomePage = async () => {
   return (
     <section>
       <Hero/>
+      <WhyUs />
       <PriceList />
     </section>
   )
