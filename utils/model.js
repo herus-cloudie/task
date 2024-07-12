@@ -9,6 +9,10 @@ let UserSchema = new Schema({
         type : String,
         require : true
     },
+    password :{
+        type : String,
+        require : true
+    },
     role: {
         type : ["USER" , "ADMIN"],
         default : 'USER'
@@ -16,6 +20,6 @@ let UserSchema = new Schema({
 } , {timestamps : true}
 )
 
-let User = models.User|| model("User" , UserSchema)
+let ExchangeUser = models.ExchangeUser|| model("ExchangeUser" , UserSchema)
 
-export default User;
+export default ExchangeUser;
