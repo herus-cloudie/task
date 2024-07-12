@@ -81,3 +81,7 @@
     font-family: 'lightVazir' !important;
   }
 
+  .sign-page-bg{
+    background: rgb(228,232,50);
+    background: linear-gradient(38deg, rgb(251, 255, 0) 10%, rgba(6,55,227,1) 80%);
+  }
