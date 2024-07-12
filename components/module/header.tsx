@@ -1,8 +1,9 @@
 'use client'
 
-import Session from "@/utils/session"
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
+import { navbarContext } from "@/constant";
 
 const Header = ({session} : {session ?: any}) => {
     const router = useRouter();
@@ -10,7 +11,27 @@ const Header = ({session} : {session ?: any}) => {
   return (
     <section className="bg-white flex justify-between items-center absolute top-5 md:w-[700px] w-[370px] xl:w-[1220px] mx-auto py-3 px-5 sm:py-5 sm:px-7 rounded-xl z-20">
         <div className="flex xl:hidden">
-            <Image className="md:w-[40px] w-[30px] cursor-pointer" src={'/icon/menu.svg'} alt="logo" width={40} height={40}/>
+        <Sheet>
+            <SheetTrigger>
+                <Image className="md:w-[40px] w-[30px] cursor-pointer" src={'/icon/menu.svg'} alt="logo" width={40} height={40}/>
+            </SheetTrigger>
+            <SheetContent className="flex flex-col">
+                <SheetClose>
+                    <Image className="w-[60px] h-[60px] absolute top-8 right-8 cursor-pointer" src={'/icon/logout.svg'} alt="logout" width={60} height={60}/>
+                </SheetClose>
+                <SheetClose className="mt-28 mr-16">
+                    {
+                        navbarContext.map(({text , url , icon}) => (
+                            <div onClick={() => router.push(url)} className={`flex text-2xl text-unActive-1 mb-16 gap-3  cursor-pointer`}>
+                                <Image className="w-[22px]" src={icon} alt="logo" width={40} height={40}/>
+                                <div>{text}</div>
+                            </div>
+                        ))
+                    }
+                </SheetClose>
+                
+            </SheetContent>
+        </Sheet>
         </div>
         <div className="flex justify-between xl:gap-10 items-center">
             <div className="xl:m-0 -ml-7">

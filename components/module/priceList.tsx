@@ -19,7 +19,7 @@ const PriceList = async () => {
         };
     });
   return (
-    <div className="bg-BTC relative">
+    <div className="bg-BTC relative" id="price">
         <Image src={'/img/BTC.png'} width={2000} height={2000} className="w-full h-[800px] opacity-20 z-10 object-cover" alt="btc picture"/>
         <div className="z-20 absolute top-5 flex justify-center items-center flex-col w-full">
             <Image src={'/img/frame.svg'} width={800} height={800} className="w-[380px] sm:w-[600px] md:w-[700px] lg:w-[900px] xl:w-[1220px] my-auto" alt="frame"/>
