@@ -2,7 +2,8 @@ import {Schema , model , models} from 'mongoose'
 
 let UserSchema = new Schema({
     email : {
-        type : String
+        type : String,
+        require : true
     },
     name: {
         type : String,
@@ -17,4 +18,4 @@ let UserSchema = new Schema({
 
 let User = models.User|| model("User" , UserSchema)
 
-export {User};
+export default User;
