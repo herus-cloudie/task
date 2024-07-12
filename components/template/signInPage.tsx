@@ -84,8 +84,8 @@ const SignInPage = () => {
     if(result?.ok) {
       router.push('/')
       toast({title: "با موفقیت وارد حساب شدید"})
-    } else if(result?.error == 'user does not exist')  toast({title: "حساب کاربری وجود ندارد",variant: "destructive"})
-      else if(result?.error == 'password is incorrect')  toast({title: "رمز عبور اشتباه است",variant: "destructive"})
+    } else if(result?.error == 'User does not exist')  toast({title: "حساب کاربری وجود ندارد",variant: "destructive"})
+      else if(result?.error == 'Password is incorrect')  toast({title: "رمز عبور اشتباه است",variant: "destructive"})
   }
   
 

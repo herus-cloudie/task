@@ -4,7 +4,7 @@ import Session from "@/utils/session"
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 
-const Header = ({session} : {session : any}) => {
+const Header = ({session} : {session ?: any}) => {
     const router = useRouter();
     const pathName = usePathname();
   return (
