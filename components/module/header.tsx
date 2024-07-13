@@ -17,7 +17,7 @@ const Header = ({session} : {session ?: any}) => {
             </SheetTrigger>
             <SheetContent className="flex flex-col">
                 <SheetClose>
-                    <Image className="w-[60px] h-[60px] absolute top-8 right-8 cursor-pointer" src={'/icon/logout.svg'} alt="logout" width={60} height={60}/>
+                    <Image className="w-[60px] h-[60px] absolute top-8 right-8 cursor-pointer" src={'/icon/Logout.svg'} alt="logout" width={60} height={60}/>
                 </SheetClose>
                 <SheetClose className="mt-28 mr-16">
                     {
