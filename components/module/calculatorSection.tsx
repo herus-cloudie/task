@@ -26,9 +26,14 @@ const CalculatorSection = async () => {
         <div className="w-full flex justify-center items-center">
           <div className="flex justify-center lg:justify-between w-[1220px] items-center">
               <div className="sm:block hidden">
-                <Image className="hidden lg:block w-[380px] h-[380px] " alt="Calculator" src={'/img/Rectangle.svg'} width={550} height={550}/>
+                <Image className="hidden lg:block w-[360px] h-[360px] " alt="Calculator" src={'/img/Rectangle.svg'} width={550} height={550}/>
               </div>
-              <Calculator data={cryptoDetails}/>
+              <div>
+                <Image className="w-[350px] h-[350px] " alt="Calculator" src={'/img/Illustration.svg'} width={550} height={550}/>
+                <div className="relative -top-64">
+                  <Calculator data={cryptoDetails}/>
+                </div>
+              </div>
           </div>
         </div>
     </section>
