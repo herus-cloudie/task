@@ -14,7 +14,8 @@ interface dynamicInputProps{
   name : string ,
   onChange : (e : any) => void ,
   label : string,
-  value : any
+  value : any,
+  placeholder ?: string
 }
 
 export type {signInType , signUpType , dynamicInputProps}
