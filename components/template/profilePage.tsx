@@ -73,7 +73,7 @@ const ProfilePage = ({session} : {session : any}) => {
   return (
     <section className="lg:h-[800px] h-[1000px] sign-page-bg flex justify-center">
       <Header />
-      <div className="w-[360px] sm:w-[600px] md-[700px] lg:w-[990px] xl:w-[1220px] bg-white rounded h-[800px] lg:h-[550px] mt-40">
+      <div className="w-[360px] sm:w-[600px] md:w-[700px] lg:w-[990px] xl:w-[1220px] bg-white rounded h-[820px] lg:h-[600px] mt-40">
         <div className="flex justify-between bg-black p-5 text-white">
           <h3 className="text-3xl pb-3">پروفایل</h3>
           <Button className="bg-red-1" onClick={signOutHandler}>خروج از حساب</Button>
@@ -84,14 +84,18 @@ const ProfilePage = ({session} : {session : any}) => {
             <p className="sm:text-xl text-lg mb-5 lg:mb-0">ایمیل : {user?.email}</p>
             <p className="sm:text-xl text-lg">نام : {user?.name}</p>
           </div>
-          <p className="text-2xl text-blue-1 mt-5 border-b border-black pb-3 my-6 pt-10">ویرایش</p>
+          <div className="flex justify-between items-baseline border-b border-black mb-5">
+            <p className="text-2xl text-blue-1 mt-5 my-6 pt-10">ویرایش</p>
+            <p className='text-red-700 sm:text-sm text-[10px]'>در صورت تغییر "نام کاربری" باید مجدد وارد اکانت بشید.</p>
+          </div>
           <div className="flex flex-col justify-center gap-14">
-            <div className="flex flex-col lg:flex-row lg:gap-0 gap-5 justify-between">
+            <div className="flex flex-col lg:flex-row lg:gap-0 gap-5 justify-center lg:justify-between">
+            
               <DynamicInput name={"name"} placeholder={user?.name} onChange={(e) => setUserInfo({...userInfo , [e.target.name] : e.target.value})} label={"نام"} value={userInfo.name} />
               <DynamicInput name={"newPassword"} onChange={(e) => setUserInfo({...userInfo , [e.target.name] : e.target.value})} label={"رمز عبور جدید"} value={userInfo.newPassword} />
               <DynamicInput name={"currentPassword"} onChange={(e) => setUserInfo({...userInfo , [e.target.name] : e.target.value})} label={"رمز عبور حال حاضر"} value={userInfo.currentPassword} />
             </div>
-            {loading ? <Loader /> : <Button onClick={editUserInfo} className="bg-blue-500">اصلاح اطلاعات</Button>}
+            {loading ? <div className="flex justify-center"><Loader /> </div> : <Button onClick={editUserInfo} className="bg-blue-500">اصلاح اطلاعات</Button>}
           </div>
         </div>
       </div>
