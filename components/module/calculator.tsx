@@ -11,12 +11,13 @@ import {
   } from "@/components/ui/select"
 import {Input} from "@/components/ui/input"
 import { useState } from "react"
+import {e2p, p2e, sp} from '@/utils/changeFormat'
 
 const Calculator = ({data} : {data : any}) => {
 
     const [first, setFirst] = useState({
         price : data[2].price,
-        count : '1',
+        count : 1,
         name : data[2].name
     });
     const [second, setSecond] = useState({
@@ -48,7 +49,7 @@ const Calculator = ({data} : {data : any}) => {
                         </Select>
                     </div>
                     <label>پرداختی</label>
-                    <Input value={+first.count} onChange={(e) => setFirst({...first , count : e.target.value})} className="w-full my-3 bg-white text-black" placeholder="مبلغ مورد نظر را وارد کنید"/>
+                    <Input value={+first.count} onChange={(e) => setFirst({...first , count : p2e(e.target.value)})} className="w-full my-3 bg-white text-black" placeholder="مبلغ مورد نظر را وارد کنید"/>
                 </div>
                 <div className="w-full">
                     <div className="relative top-[70px] right-44 w-12" >
