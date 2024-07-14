@@ -22,9 +22,8 @@ const Header = ({session} : {session ?: any}) => {
                 </SheetClose>
                 <SheetClose className="mt-28 mr-16">
                     {
-                        navbarContext.map(({text , url , icon}) => (
+                        navbarContext.map(({text , url}) => (
                             <div onClick={() => router.push(url)} className={`flex text-2xl text-unActive-1 mb-16 gap-3  cursor-pointer`}>
-                                {icon && <Image className="w-[22px]" src={icon} alt="logo" width={40} height={40}/>}
                                 <div>{text}</div>
                             </div>
                         ))

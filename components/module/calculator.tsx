@@ -11,7 +11,7 @@ import {
   } from "@/components/ui/select"
 import {Input} from "@/components/ui/input"
 import { useState } from "react"
-import {e2p, p2e, sp} from '@/utils/changeFormat'
+import {p2e} from '@/utils/changeFormat'
 
 const Calculator = ({data} : {data : any}) => {
 
