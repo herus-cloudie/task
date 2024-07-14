@@ -13,7 +13,8 @@ const Header = ({session} : {session ?: any}) => {
         <div className="flex xl:hidden">
         <Sheet>
             <SheetTrigger>
-                <Image className="md:w-[40px] w-[30px] cursor-pointer" src={'/icon/menu.svg'} alt="logo" width={40} height={40}/>
+            {pathName !== '/sign-in' &&
+            <Image className="md:w-[40px] w-[30px] cursor-pointer" src={'/icon/menu.svg'} alt="logo" width={40} height={40}/>}
             </SheetTrigger>
             <SheetContent className="flex flex-col">
                 <SheetClose>
@@ -23,7 +24,7 @@ const Header = ({session} : {session ?: any}) => {
                     {
                         navbarContext.map(({text , url , icon}) => (
                             <div onClick={() => router.push(url)} className={`flex text-2xl text-unActive-1 mb-16 gap-3  cursor-pointer`}>
-                                <Image className="w-[22px]" src={icon} alt="logo" width={40} height={40}/>
+                                {icon && <Image className="w-[22px]" src={icon} alt="logo" width={40} height={40}/>}
                                 <div>{text}</div>
                             </div>
                         ))
@@ -37,43 +38,50 @@ const Header = ({session} : {session ?: any}) => {
             <div className="xl:m-0 -ml-7">
                 <Image  src={'/img/logo.svg'} alt="logo"  className="md:w-[103px] w-[75px]" width={103} height={40}/>
             </div>
-            <div className="hidden xl:flex gap-5 justify-between ">
-                <span onClick={() => router.push('/')} className="cursor-pointer font-bold text-blue-1 border-b-2 pb-1 border-blue-1 ">
-                    صفحه اصلی
-                </span>
-                <span className="cursor-pointer text-unActive-1">
-                    خرید و فروش ارز
-                </span>
-                <span className="cursor-pointer text-unActive-1">
-                    قیمت
-                </span>
-                <span className="cursor-pointer text-unActive-1">
-                    مقالات آموزشی
-                </span>
-                <span className="cursor-pointer text-unActive-1">
-                    وبلاگ
-                </span>
-                <span className="cursor-pointer text-unActive-1">
-                    ارتباط با ما
-                </span>
+            <div className="hidden xl:flex gap-8 justify-between ">
+                {pathName !== '/sign-in' ?
+                    <>
+                        <a href="/" className="cursor-pointer font-bold text-blue-1 border-b-2 pb-1 border-blue-1 ">
+                             صفحه اصلی
+                        </a>
+                        <a className="cursor-pointer text-unActive-1" href="/#USDT">
+                             قیمت ارزها
+                        </a>
+                        <a href="/#whyUs" className="cursor-pointer text-unActive-1">
+                            چرا ما؟
+                        </a>
+                        <a href="/#calculator" className="cursor-pointer text-unActive-1">
+                            ماشین حساب آنلاین
+                        </a>
+                        
+                        <a href="/#contact" className="cursor-pointer text-unActive-1">
+                            ارتباط با ما
+                        </a>
+                    </>
+                    : null
+                }
             </div>
         </div>
-        <div className="hidden xl:flex justify-between gap-3 ">
-            {pathName == '/' && <button onClick={() => router.push('profile')} className="bg-blue-1 flex text-white p-3 items-center gap-5 rounded-xl">پروفایل
-                <Image width={20} height={20} src={'/icon/user.svg'} alt="user icon"/>
-            </button>}
-            <button className="bg-red-1 flex text-white p-3 items-center gap-5 rounded-xl">پشتیبانی
-                <Image width={20} height={20} src={'/icon/headphone.svg'} alt="headphone icon"/>
-            </button>
-        </div>
-        <div className="flex xl:hidden justify-between gap-3">
-            <button onClick={() => session ? router.push('profile') : router.push('sign-in')}  className="bg-blue-1 flex text-white p-3 items-center gap-5 rounded-xl">
-                <Image className="md:w-[20px] w-[15px]" width={20} height={20} src={'/icon/user.svg'} alt="user icon"/>
-            </button>
-            <button className="bg-red-1 flex text-white p-3 items-center gap-5 rounded-xl">
-                <Image className="md:w-[20px] w-[15px]" width={20} height={20} src={'/icon/headphone.svg'} alt="headphone icon"/>
-            </button>
-        </div>
+            <div className="hidden xl:flex justify-between gap-3 ">
+                {pathName == '/' &&
+                    <button onClick={() => router.push('profile')} className="bg-blue-1 flex text-white p-3 items-center gap-5 rounded-xl">پروفایل
+                    <Image width={20} height={20} src={'/icon/user.svg'} alt="user icon"/>
+                </button>
+                }
+                <button className="bg-red-1 flex text-white p-3 items-center gap-5 rounded-xl">پشتیبانی
+                    <Image width={20} height={20} src={'/icon/headphone.svg'} alt="headphone icon"/>
+                </button>
+            </div>
+            <div className="flex xl:hidden justify-between gap-3">
+                {pathName !== '/sign-in' &&
+                    <button onClick={() => session ? router.push('profile') : router.push('sign-in')}  className="bg-blue-1 flex text-white p-3 items-center gap-5 rounded-xl">
+                    <Image className="md:w-[20px] w-[15px]" width={20} height={20} src={'/icon/user.svg'} alt="user icon"/>
+                </button>
+                }
+                <button className="bg-red-1 flex text-white p-3 items-center gap-5 rounded-xl">
+                    <Image className="md:w-[20px] w-[15px]" width={20} height={20} src={'/icon/headphone.svg'} alt="headphone icon"/>
+                </button>
+            </div>
     </section>
   )
 }

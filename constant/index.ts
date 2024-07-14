@@ -1,18 +1,21 @@
 const navbarContext = [
     {
         text : 'صفحه اصلی',
-        icon : '/icon/Home.svg',
-        url : '/'
+        url : '/#home'
     },
     {
-        text : "قیمت تتر",
+        text : 'پروفایل',
+        url : '/profile'
+    },
+    {
+        text : "قیمت ارزها",
         icon : '/icon/Dollar.svg',
         url : '/#USDT'
     },
     {
-        text : 'قیمت های انلاین',
+        text : 'ماشین حساب آنلاین',
         icon : '/icon/Display.svg',
-        url : '/#price'
+        url : '/#calculator'
     },
     {
         text : 'آموزش',
@@ -22,7 +25,7 @@ const navbarContext = [
     {
         text : 'ارتباط با ما',
         icon : '/icon/headphone2.svg',
-        url : ''
+        url : '/#contact'
     },
 ]
 

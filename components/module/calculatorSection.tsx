@@ -21,10 +21,10 @@ const CalculatorSection = async () => {
         };
     });
   return (
-    <section className="flex flex-col w-full p-10 md:p-20">
+    <section className="flex flex-col w-full pt-10 px-10 md:pt-20 md:px-20 pb-0 h-[700px] " id="calculator">
         <div className="text-[#2E3133] text-3xl font-bold mb-10">ماشین حساب آنلاین</div>
         <div className="w-full flex justify-center items-center">
-          <div className="flex justify-center lg:justify-between w-[1220px] items-center">
+          <div className="flex justify-center lg:justify-between w-[1220px] items-baseline">
               <div className="sm:block hidden">
                 <Image className="hidden lg:block w-[360px] h-[360px] " alt="Calculator" src={'/img/Rectangle.svg'} width={550} height={550}/>
               </div>

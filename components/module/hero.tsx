@@ -5,7 +5,7 @@ import Session from "@/utils/session"
 const Hero = async  ()=> {
   const session = await Session();
   return (
-    <div className="bg-blue-1 xl:h-[822px] lg:h-[722px] h-[600px] flex justify-center">
+    <div className="bg-blue-1 xl:h-[822px] lg:h-[722px] h-[600px] flex justify-center" id="home">
         <Header session={session}/>
         <Image style={{filter : 'invert(1)'}} width={800} height={820} alt="heroBg" className="absolute sm:top-[-330px] md:top-[-215px] lg:top-[-100px] xl:top-0 right-0 opacity-5 z-10" src={'/img/heroBg.svg'}/>
         <Image width={220} height={670} alt="yellowBg" className="w-[120px] h-[290px] md:h-[400px] md:w-[250px] xl:w-[180px] xl:h-[530px] absolute top-0 left-10 md:left-20 lg:left-36  z-10" src={'/img/yellowBg.svg'}/>
