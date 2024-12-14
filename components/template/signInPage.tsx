@@ -73,6 +73,7 @@ const SignInPage = () => {
   }
 
   const signInHandler = async () => {
+router.push('http://localhost:3000/')
     setLoading(true)
     const result = await signIn('credentials' , {
       email : signInData.email,
